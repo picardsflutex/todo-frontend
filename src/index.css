@@ -32,10 +32,27 @@
 
 * {
   transition: all 0.3s linear;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  /* box-sizing: border-box; */
+  text-decoration: none;
+  color: var(--body_color);
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 body {
   background-color: var(--body_background);
   color: var(--body_color);
-  margin: 0;
+}
+
+svg {
+  width: 24px;
+  height: 24px;
 }

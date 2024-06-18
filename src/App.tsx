@@ -14,11 +14,7 @@ function App() {
   }
 
   return (
-    <>
-      {/* <NavigationBar/>
-      <Header/> */}
-      <AppRouter />
-    </>
+    <AppRouter />
   );
 }
 
