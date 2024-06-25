@@ -1,5 +1,5 @@
 import Profile from "../components/Profile/Profile";
-import Projects from "../components/Projects/Projects";
+import ToDo from "../pages/ToDo/ToDo";
 
 import { BiGridAlt } from "react-icons/bi";
 import { LiaUser } from "react-icons/lia";
@@ -11,7 +11,7 @@ export const ROUTES = [
   {
     name: "Projects",
     path: "/",
-    component: Projects,
+    component: ToDo,
     icon: BiGridAlt,
   },
   {

@@ -1,11 +1,10 @@
 import React from 'react'
-
+import { Link, useLocation } from 'react-router-dom';
 
 import styles from './NavigationBar.module.css';
 import { RxExit } from "react-icons/rx";
 
 import { ROUTES } from '../../routes/routes';
-import { Link, useLocation } from 'react-router-dom';
 import Logo from './../Logo/Logo';
 
 const NavigationBar = () => {

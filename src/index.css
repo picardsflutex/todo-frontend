@@ -12,6 +12,8 @@
   --progress_background: #ffa04825;
   --complete: #78d700;
   --complete_background: #78d70025;
+  --theme_switch_background: #ffffff0a;
+  --theme_switch_button: #ffffff11;
 }
 
 [data-theme="light"] {
@@ -28,6 +30,8 @@
   --progress_background: #ffa04825;
   --complete: #78d700;
   --complete_background: #78d70025;
+  --theme_switch_background: #0000000a;
+  --theme_switch_button: #00000011;
 }
 
 * {
@@ -36,9 +40,32 @@
   margin: 0;
   padding: 0;
   box-sizing: content-box;
-  /* box-sizing: border-box; */
+
   text-decoration: none;
   color: var(--body_color);
+  font-family: "Exo 2", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 600;
 }
 
 button {
