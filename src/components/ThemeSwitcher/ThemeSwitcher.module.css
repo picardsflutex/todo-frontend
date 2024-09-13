@@ -1,6 +1,7 @@
 .switchContainer {
   position: relative;
   width: 90%;
+  max-width: 260px;
   display: flex;
   justify-content: space-around;
 

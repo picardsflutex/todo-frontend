@@ -34,7 +34,9 @@
   --theme_switch_button: #00000011;
 }
 
-* {
+*,
+*::after,
+*::before {
   transition: all 0.3s linear;
   list-style-type: none;
   margin: 0;
