@@ -1,4 +1,5 @@
 import Profile from "../components/Profile/Profile";
+import Projects from "../components/Projects/Projects";
 import ToDo from "../pages/ToDo/ToDo";
 
 import { BiGridAlt } from "react-icons/bi";
@@ -10,9 +11,27 @@ import { VscSettings } from "react-icons/vsc";
 export const ROUTES = [
   {
     name: "Projects",
-    path: "/",
+    path: "/menu",
     component: ToDo,
     icon: BiGridAlt,
+    subroutes: [
+      {
+        path: "team",
+        component: Profile,
+      },
+      {
+        path: "projects",
+        component: Projects,
+      },
+      {
+        path: "tasks",
+        component: Profile,
+      },
+      {
+        path: "reminders",
+        component: Profile,
+      },
+    ]
   },
   {
     name: "Profile",

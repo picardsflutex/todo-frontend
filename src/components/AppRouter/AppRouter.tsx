@@ -15,6 +15,21 @@ const AppRouter = () => {
         <NavigationBar />
         <Routes>
           {ROUTES.map((routerItem, index) =>
+            routerItem.subroutes ?
+            <Route
+              key={index}
+              Component={routerItem.component}
+              path={routerItem.path}
+            >
+              {routerItem.subroutes.map((routerItem, index) => 
+                <Route
+                key={index}
+                Component={routerItem.component}
+                path={routerItem.path}
+                />
+              )}
+            </Route>
+            :
             <Route
               key={index}
               Component={routerItem.component}
