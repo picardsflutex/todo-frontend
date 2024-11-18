@@ -1,0 +1,33 @@
+.navigation {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--nav_background);
+}
+
+.navigationList {
+  width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  margin: 24px 0;
+}
+
+.navigationItem,
+.button {
+  margin: 12px 0;
+  padding: 12px;
+  border-radius: 50%;
+}
+
+.navigationItem:hover,
+.button:hover,
+.active {
+  background-color: var(--sub_color_background);
+}

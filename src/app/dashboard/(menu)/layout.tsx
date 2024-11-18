@@ -1,6 +1,6 @@
+import { AsideMenu } from "@/widgets";
 import type { Metadata } from "next";
-import "./globals.css";
-
+import styles from './layout.module.css'
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,10 +13,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        {children}
-      </body>
-    </html>
+    <main className={styles.container}>
+      <AsideMenu />
+      {children}
+    </main>
   );
 }

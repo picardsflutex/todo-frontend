@@ -1,0 +1,45 @@
+.projectList {
+  background-color: var(--aside_background);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.projectListHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  margin-right: 120px;
+}
+
+.addButton {
+  background-color: var(--sub_color_background);
+
+  border-radius: 50%;
+
+  height: 32px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addButton svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--sub_color);
+}
+
+.projectListFooter {
+  display: flex;
+  justify-content: center;
+}
+
+.section {
+  display: flex;
+  flex-direction: row;
+}
