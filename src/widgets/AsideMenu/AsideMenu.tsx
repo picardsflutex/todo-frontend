@@ -6,14 +6,38 @@ import styles from './AsideMenu.module.css'
 import { IoAdd } from 'react-icons/io5';
 import CollapseMenu from '../CollapseMenu/CollapseMenu';
 import { MENU_ROUTES } from '@/routes/routes';
+import { useEffect, useState } from 'react';
+import axiosInstance from '@/utils/axiosInstance';
+import { Project } from '@/types';
+import { useSession } from 'next-auth/react';
 
 const AsideMenu = () => {
+  const session = useSession()
+  console.log("session = ", session)
+
+  const [projects, setProjects] = useState<Project[]>([])
+
+  async function fetchData() {
+    const resposne = await axiosInstance.get('/projects/user')
+    const currentProjects: Project[] = resposne.data
+    setProjects(currentProjects)
+  }
+
+  useEffect(() => {
+    fetchData()
+  }, [])
+
+  console.log(projects)
+
+  const createProject = () => {
+
+  }
 
   return <aside className={styles.projectList}>
     <div className={styles.flex}>
       <header className={styles.projectListHeader}>
         <h1 className={styles.title}>Menu</h1>
-        <button className={styles.addButton}>
+        <button className={styles.addButton} onClick={() => createProject()}>
           <IoAdd />
         </button>
       </header>
