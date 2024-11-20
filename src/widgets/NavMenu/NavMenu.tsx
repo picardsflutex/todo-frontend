@@ -8,9 +8,11 @@ import { RxExit } from 'react-icons/rx';
 import { Logo } from '@/shared';
 import { DASHBOARD_ROUTES } from '@/routes/routes';
 import { usePathname } from 'next/navigation';
+import { signOut, useSession } from 'next-auth/react';
 
 const NavMenu = () => {
   const pathname = usePathname()
+
 
   return <nav className={styles.navigation}>
     <ul className={styles.navigationList}>
@@ -30,7 +32,7 @@ const NavMenu = () => {
         </li>
       ))}
     </ul>
-    <button className={styles.button}>
+    <button className={styles.button} onClick={() => signOut({ redirect: true, redirectTo: '/dashboard/projects' })}>
       <RxExit />
     </button>
   </nav>;

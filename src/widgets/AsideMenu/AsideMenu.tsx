@@ -12,7 +12,7 @@ const AsideMenu = () => {
   return <aside className={styles.projectList}>
     <div className={styles.flex}>
       <header className={styles.projectListHeader}>
-        <h1 className={styles.title}>Projects</h1>
+        <h1 className={styles.title}>Menu</h1>
         <button className={styles.addButton}>
           <IoAdd />
         </button>
