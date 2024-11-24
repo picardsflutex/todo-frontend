@@ -54,7 +54,7 @@ export const MENU_ROUTES = [
   },
   {
     name: "Task",
-    path: "/dashboard/task",
+    path: "/dashboard/tasks",
     component: Projects,
     icon: BiGridAlt,
   },

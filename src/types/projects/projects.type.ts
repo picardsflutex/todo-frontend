@@ -20,6 +20,12 @@ export interface Project {
   ProjectParticipant: ProjectParticipant[];
 }
 
+export interface Stasuses {
+  id: number;
+  title: string;
+  status: Status;
+}
+
 export interface Task {
   id: number;
   title: string;
@@ -30,4 +36,16 @@ export interface Task {
   projectId?: number | null;
   comments: Comment[];
   userId?: number | null;
+}
+
+export interface CreateProjectDto {
+  title: string;
+  description: string;
+  status?: Status;
+}
+
+export interface UpdateProjectDto {
+  title?: string;
+  description?: string;
+  status?: Status;
 }

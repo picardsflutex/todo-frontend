@@ -8,16 +8,16 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { IoIosArrowForward } from 'react-icons/io';
 
-const CollapseMenu = ({ link, title, elements }: ICollapseMenuProps) => {
+const CollapseMenu = ({ link, title, elements, isStatuses }: ICollapseMenuProps) => {
 
-  const parametrName = title.toLowerCase()
+  const parametrName = isStatuses ? 'status' : 'id'
   const pathname = usePathname()
   const router = useRouter();
   const searchParams = useSearchParams();
-  const qurentParam = searchParams?.get(parametrName);
+  const qurentParam = searchParams.get(parametrName);
 
   const addMultipleParams = (parametrName: string, queryParameter: string) => {
-    const currentParams = new URLSearchParams(searchParams?.toString() || '');
+    const currentParams = new URLSearchParams('');
     currentParams.set(parametrName, queryParameter);
 
     router.push(`?${currentParams.toString()}`);
@@ -43,13 +43,13 @@ const CollapseMenu = ({ link, title, elements }: ICollapseMenuProps) => {
               All {title?.toLowerCase()} ({elements.length})
             </button>
           </li>
-          {elements.map((item, index) => (
-            <li className={styles.collapseMenuListItem} key={index}>
+          {elements.map(({ id, status, title }) => (
+            <li className={styles.collapseMenuListItem} key={id}>
               <button
-                className={`${styles.collapseMenuListButton} ${qurentParam === item && styles.checked}`}
-                onClick={() => addMultipleParams(parametrName, item)}
+                className={`${styles.collapseMenuListButton} ${qurentParam === `${isStatuses ? status : id}` && styles.checked}`}
+                onClick={() => addMultipleParams(parametrName, `${isStatuses ? status : id}`)}
               >
-                {item}
+                {title}
               </button>
             </li>
           ))}

@@ -1,9 +1,10 @@
+import { Project, Stasuses } from "@/types";
 import React from "react";
 
 export interface ICollapseMenuProps {
   link: string;
-  summingElement?: string;
   title: string;
-  elements?: string[];
-  children?: typeof React.Children
+  elements?: Project[] | Stasuses[];
+  children?: typeof React.Children;
+  isStatuses?: boolean
 }
