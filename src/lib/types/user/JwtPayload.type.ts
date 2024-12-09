@@ -1,4 +1,4 @@
-export type Role = "ADMIN" | "MANAGER" | "SEO" | "USER";
+import { Role } from "../enums";
 
 export type JwtPayload = {
   name: string | null;

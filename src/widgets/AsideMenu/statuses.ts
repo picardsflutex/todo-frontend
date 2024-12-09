@@ -1,6 +1,6 @@
-import { Stasuses } from "@/types";
+import { Collapse } from "@/lib/types";
 
-export const statuses: Stasuses[] = [
+export const statuses: Collapse[] = [
   {
     id: 1,
     title: "ToDo",

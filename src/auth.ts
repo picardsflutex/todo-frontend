@@ -2,12 +2,10 @@ import NextAuth from "next-auth"
 import Credentials from "next-auth/providers/credentials"
 import GitHub from "next-auth/providers/github"
 import Google from "next-auth/providers/google"
-import axiosInstance from "./utils/axiosInstance"
+import axiosInstance from "./lib/utils/axiosInstance"
 import { jwtDecode } from "jwt-decode"
-import { JwtPayload, Role } from "./types"
-import { saveAccessToken } from "./utils/accesstoken"
+import { JwtPayload, Role } from "./lib/types"
 
- 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
     Google,
@@ -52,7 +50,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       }
       return token;
     },
-    async session({session, token}) {
+    async session({session, token}) {               
       if(token.provider === 'credentials'){
         session.user = {
           ...session.user,
@@ -68,12 +66,11 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       })
 
       const { access_token } = response.data;
-      saveAccessToken(access_token)
 
       const currentUser = jwtDecode(access_token)
       session.user = {...session.user, ...currentUser}
       }
       return session;
     },
-  },
+  }
 })
