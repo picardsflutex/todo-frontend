@@ -6,11 +6,11 @@ import styles from './AsideMenu.module.css';
 import { IoAdd } from 'react-icons/io5';
 import CollapseMenu from '../CollapseMenu/CollapseMenu';
 import { MENU_ROUTES } from '@/lib/routes/routes';
-import axiosInstance from '@/lib/utils/axiosInstance';
 import { CreateProjectDto, Project } from '@/lib/types';
 import { statuses } from './statuses';
 import { useEffect } from 'react';
 import { useProjectStore } from '@/lib/stores';
+import { axiosPrivate } from '@/lib/utils';
 
 const AsideMenu = () => {
   const projects = useProjectStore(state => state.projects)
@@ -25,8 +25,7 @@ const AsideMenu = () => {
   // );
 
   const fetchProjects = async () => {
-    const response = await axiosInstance.get('/projects/user');
-    console.log(response)
+    const response = await axiosPrivate.get('/projects/user');
     // const currentProjects: Project[] = response.data;
     // setProjects(currentProjects ? currentProjects : [])
   }

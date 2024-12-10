@@ -8,14 +8,13 @@ import { RxExit } from 'react-icons/rx';
 import { Logo } from '@/shared';
 import { DASHBOARD_ROUTES } from '@/lib/routes/routes';
 import { usePathname } from 'next/navigation';
-import { signOut, useSession } from 'next-auth/react';
 import Cookie from 'js-cookie';
 
 const NavMenu = () => {
   const pathname = usePathname()
 
   const handleSighnOut = () => {
-    signOut({ redirect: true, redirectTo: 'api/auth/signin' })
+    signOut({ redirect: true, redirectTo: '/' })
     // Cookie.remove('access_token')
   }
 
