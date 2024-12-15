@@ -1,22 +1,14 @@
-"use client"
+'use client'
 
-import { IAuthProps } from './IAuthProps';
+import { AuthForm } from '@/widgets'
 import styles from './Auth.module.css'
-import { axiosPublic } from '@/lib/utils';
 
-const Auth = ({ ...props }: IAuthProps) => {
+const Auth = () => {
+	return (
+		<main className={styles.authPage}>
+			<AuthForm />
+		</main>
+	)
+}
 
-  const signIn = async () => {
-    const response = await axiosPublic.post(`/auth/signin`, {
-      email: 'picardsflutex1@gmail.com',
-      password: '12341234'
-    })
-    localStorage.setItem("session", JSON.stringify(response.data))
-  }
-
-  return <main {...props}>
-    <button onClick={() => signIn()}>SingIn</button>
-  </main>;
-};
-
-export default Auth;
+export default Auth
