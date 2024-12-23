@@ -1,0 +1,26 @@
+.inputGroup {
+	margin: 12px 0;
+	position: relative;
+}
+
+.labelGroup {
+	display: flex;
+	justify-content: space-between;
+}
+
+.inputButton {
+	position: absolute;
+	top: 50%;
+	right: 12px;
+	height: 20px;
+	width: 20px;
+}
+
+.inputButton svg {
+	height: 20px;
+	width: 20px;
+}
+
+.input {
+	margin: 2px 0 0 0;
+}

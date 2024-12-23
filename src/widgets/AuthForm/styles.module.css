@@ -1,0 +1,15 @@
+.AuthSection {
+	display: flex;
+	flex-direction: column;
+	margin: 10% auto;
+	align-items: center;
+	width: clamp(250px, 30%, 600px);
+}
+
+.form {
+	width: 100%;
+}
+
+.buttonForm {
+	margin-top: 0;
+}

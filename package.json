@@ -11,6 +11,7 @@
 	},
 	"dependencies": {
 		"axios": "^1.7.7",
+		"classnames": "^2.5.1",
 		"js-cookie": "^3.0.5",
 		"jwt-decode": "^4.0.0",
 		"mem": "^9.0.2",

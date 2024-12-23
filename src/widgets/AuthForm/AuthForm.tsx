@@ -1,7 +1,10 @@
+'use client'
+
 import { axiosPublic } from '@/lib/utils'
-import { LabeledInput } from '@/shared'
+import { Button, LabeledInput } from '@/shared'
+import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { LoginFormInputs } from './IAuthFormProps'
+import { authMethod, LoginFormInputs } from './IAuthFormProps'
 import styles from './styles.module.css'
 
 const AuthForm = () => {
@@ -12,10 +15,14 @@ const AuthForm = () => {
 	} = useForm<LoginFormInputs>()
 
 	const onSubmit: SubmitHandler<LoginFormInputs> = async data => {
-		const response = await axiosPublic.post(`/auth/signin`, data)
+		const response = await axiosPublic.post(
+			`/auth/${method.toLowerCase()}`,
+			data
+		)
 		localStorage.setItem('session', JSON.stringify(response.data))
-		console.log('Logging in with', response)
 	}
+
+	const [method, setMethod] = useState<authMethod>('SignIn')
 
 	return (
 		<section className={styles.AuthSection}>
@@ -35,14 +42,30 @@ const AuthForm = () => {
 					type='password'
 					register={register}
 					required
+					forgotPass={method === 'SignIn' ? true : false}
 					errors={errors.password?.message}
 				/>
-				<button type='submit' className={styles.buttonForm}>
-					Login
-				</button>
+				{method === 'SingUp' && (
+					<LabeledInput<LoginFormInputs>
+						id='confirmPassword'
+						label='Confirm password:'
+						type='password'
+						register={register}
+						forgotPass={false}
+						errors={errors.confirmPassword?.message}
+					/>
+				)}
+				<Button type='submit' className={styles.buttonForm}>
+					{method}
+				</Button>
 			</form>
 			<p className={styles.registerLink}>
-				Don’t have an account? <a href='/register'>Register here</a>
+				Don’t have an account?{' '}
+				<button
+					onClick={() => setMethod(method === 'SignIn' ? 'SingUp' : 'SignIn')}
+				>
+					{method === 'SignIn' ? 'SingUp' : 'SignIn'}
+				</button>
 			</p>
 		</section>
 	)

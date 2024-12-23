@@ -1,87 +1,132 @@
 :root {
-  --body_background: #292b31;
-  --aside_background: #222327;
-  --nav_background: #1c1d22;
-  --body_color: #ffffff;
-  --body_sub_color: #989caa;
-  --button_color: #4b69ff;
-  --sub_color_background: #989caa25;
-  --warning: #ff7979;
-  --warning_background: #ff797925;
-  --progress: #ffa048;
-  --progress_background: #ffa04825;
-  --complete: #78d700;
-  --complete_background: #78d70025;
-  --theme_switch_background: #ffffff0a;
-  --theme_switch_button: #ffffff11;
+	--body_background: #292b31;
+	--aside_background: #222327;
+	--nav_background: #1c1d22;
+	--body_color: #ffffff;
+	--body_sub_color: #989caa;
+	--sub_color_background: #989caa25;
+	--danger: #ec221f;
+	--danger_border: #c00f0c;
+	--warning: #e8b931;
+	--warning_border: #975102;
+	--success: #14ae5c;
+	--success_border: #009951;
+	--theme_switch_background: #ffffff0a;
+	--theme_switch_button: #ffffff11;
 }
 
-[data-theme="light"] {
-  --body_background: #ffffff;
-  --aside_background: #ffffff;
-  --nav_background: #ffffff;
-  --body_color: #1c1d22;
-  --body_sub_color: #888da7;
-  --button_color: #1c1d22;
-  --sub_color_background: #888da725;
-  --warning: #ff7979;
-  --warning_background: #ff797925;
-  --progress: #ffa048;
-  --progress_background: #ffa04825;
-  --complete: #78d700;
-  --complete_background: #78d70025;
-  --theme_switch_background: #0000000a;
-  --theme_switch_button: #00000011;
+[data-theme='light'] {
+	--body_background: #ffffff;
+	--aside_background: #b8b7b7;
+	--nav_background: #828181;
+	--body_color: #1c1d22;
+	--body_sub_color: #888da7;
+	--sub_color_background: #888da725;
+	--theme_switch_background: #0000000a;
+	--theme_switch_button: #00000011;
+}
+
+button:hover {
+	--danger: #c00f0c;
+	--danger_border: #900b09;
+	--warning: #e5a000;
+	--warning_border: #522504;
+	--success: #009951;
+	--success_border: #02542d;
 }
 
 *,
 *::after,
 *::before {
-  transition: all 0.3s linear;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	transition: all 0.3s linear;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 
-  text-decoration: none;
-  color: var(--body_color);
-  font-family: "Exo 2", sans-serif;
-  font-optical-sizing: auto;
-  font-size: 14px;
+	text-decoration: none;
+	color: var(--body_color);
+	font-family: 'Exo 2', sans-serif;
+	font-optical-sizing: auto;
+	font-size: 14px;
 }
 
 h1 {
-  font-size: 30px;
-  font-weight: 700;
+	font-size: 30px;
+	font-weight: 700;
 }
 
 h2 {
-  font-size: 20px;
-  font-weight: 700;
+	font-size: 20px;
+	font-weight: 700;
 }
 
 h3 {
-  font-size: 16px;
-  font-weight: 700;
+	font-size: 16px;
+	font-weight: 700;
 }
 
 h4 {
-  font-size: 16px;
-  font-weight: 600;
+	font-size: 16px;
+	font-weight: 600;
 }
 
 button {
-  background: none;
-  border: none;
-  cursor: pointer;
+	background: none;
+	border: none;
+	cursor: pointer;
 }
 
 body {
-  background-color: var(--body_background);
-  color: var(--body_color);
+	background-color: var(--body_background);
+	color: var(--body_color);
 }
 
 svg {
-  width: 24px;
-  height: 24px;
+	width: 24px;
+	height: 24px;
+}
+
+.small {
+	margin: 8px;
+	padding: 8px;
+}
+
+.medium {
+	margin: 12px;
+	padding: 12px;
+}
+
+.large {
+	margin: 16px;
+	padding: 16px;
+}
+
+.base {
+	color: var(--nav_background);
+	background-color: var(--body_color);
+	border-color: var(--body_sub_color);
+}
+
+.base:hover {
+	background-color: var(--body_sub_color);
+	border-color: var(--aside_background);
+}
+
+.danger {
+	color: #fff;
+	background-color: var(--danger);
+	border-color: var(--danger_border);
+}
+
+.warning {
+	color: #fff;
+	background-color: var(--warning);
+	border-color: var(--warning_border);
+}
+
+.succes {
+	color: #fff;
+	background-color: var(--success);
+	border-color: var(--success_border);
 }
